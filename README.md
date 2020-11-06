@@ -97,7 +97,7 @@ RedLock 步骤：
 ## 总结：
 * redis内存操作，性能高，获取不到锁需要轮询，不是强一致性，可用性会低一些
 * zookeeper强一致性，获取不到锁可以监听，但是多客户端频繁操作（加锁、释放锁），集群压力比较大
-
+* 尽量不使用mysql的方式，只有在并发确实不高，并且不想引入新的组件可以使用，建议方式二，不用向磁盘写数据，不用写redo log、bin log
 
 参考：
 https://zhuanlan.zhihu.com/p/163224180?utm_source=wechat_timeline
